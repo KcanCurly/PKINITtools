@@ -141,7 +141,7 @@ class GETPAC(object):
 
         seq_set(authenticator, 'cname', clientName.components_to_asn1)
 
-        now = datetime.datetime.utcnow()
+        now = datetime.datetime.now(datetime.timezone.utc)
         authenticator['cusec'] = now.microsecond
         authenticator['ctime'] = KerberosTime.to_asn1(now)
 
@@ -236,8 +236,7 @@ class GETPAC(object):
         specialkey = Key(18, unhexlify(self.__asrep_key))
         self.printPac(plainText, specialkey)
 
-# Process command-line arguments.
-if __name__ == '__main__':
+def main():
     logger.init()
     print(version.BANNER)
 
@@ -276,3 +275,8 @@ if __name__ == '__main__':
             import traceback
             traceback.print_exc()
         logging.error(str(e))
+
+
+# Process command-line arguments.
+if __name__ == '__main__':
+    main()
