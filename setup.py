@@ -11,7 +11,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         "impacket",
-        "oscrypto @ git+https://github.com/wbond/oscrypto@master",
+        "minikerberos",
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
