@@ -10,8 +10,8 @@ setup(
     url="https://github.com/KcanCurly/PKINITtools",
     packages=find_packages(),
     install_requires=[
-        "impacket",
         "minikerberos",
+        "oscrypto @ git+https://github.com/wbond/oscrypto",
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
